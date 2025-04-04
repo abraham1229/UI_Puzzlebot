@@ -88,7 +88,7 @@ export default function MyComponent() {
         id='numberInput'
         value={number.data}
         onChange={handleChange}/>
-      <h1 class='font-bold text-5xl'>Hola</h1>
+      <h1 className='text-5xl text-red-500'>Hola</h1>
     </div>
   )
 }
