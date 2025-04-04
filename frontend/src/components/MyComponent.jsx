@@ -77,7 +77,7 @@ export default function MyComponent() {
       clearInterval(interval)
       console.log('hols')
     }
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (
