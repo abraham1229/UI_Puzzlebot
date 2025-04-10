@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as ROSLIB from 'roslib'
+import { useTopicValue } from '../hooks/topic'
 
 
 export default function PublisherComponent() {
+
+  //Valores de zustand
+  const {setValue} = useTopicValue()
   
   //Vars ros conextion
   const [status, setStatus] = useState(false)
@@ -62,33 +66,33 @@ export default function PublisherComponent() {
 
   useEffect(() => {
     numberRef.current = number;
+    setValue(number)
+
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [number]);
 
   useEffect(() =>{
     
-
     const interval = setInterval(() =>{
-      console.log(numberRef.current)
       publish(numberRef.current)
 
     }, 1000)
 
     return () => {
       clearInterval(interval)
-      console.log('hols')
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (
-    <div>
-      <label htmlFor='numberInput'>Valor del numero</label>
+    <div className='flex flex-col'>
+      <label className='text-lg ' htmlFor='numberInput'>Seleccione el modelo deseado</label>
       <input 
+        className='bg-white text-black mt-6 max-w-3/4 px-5 py-2 rounded-2xl'
         type='number'
         id='numberInput'
         value={number.data}
         onChange={handleChange}/>
-      <h1 className='text-5xl text-red-500'>Hola</h1>
     </div>
   )
 }
