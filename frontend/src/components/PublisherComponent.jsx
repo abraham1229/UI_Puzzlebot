@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import * as ROSLIB from 'roslib'
 
 
-export default function MyComponent() {
+export default function PublisherComponent() {
   
   //Vars ros conextion
   const [status, setStatus] = useState(false)
