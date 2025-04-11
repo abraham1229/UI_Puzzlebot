@@ -58,10 +58,10 @@ def generate_launch_description():
                     arguments=['-d', rviz_config],
                     )
     
-    rqt_tf_tree_node = Node(name='rqt_tf_tree',
-                    package='rqt_tf_tree',
-                    executable='rqt_tf_tree'
-                    )
+    # rqt_tf_tree_node = Node(name='rqt_tf_tree',
+    #                 package='rqt_tf_tree',
+    #                 executable='rqt_tf_tree'
+    #                 )
     
     puzzlebot_node = Node(name="puzzlebot",
                             package='ui_implementation',
@@ -97,7 +97,7 @@ def generate_launch_description():
         static_transform_node_2,
         robot_state_pub_node, 
         rviz_node, 
-        rqt_tf_tree_node,
+        # rqt_tf_tree_node,
         puzzlebot_node, 
         shutdown_log,
         *shutdown_on_exit])

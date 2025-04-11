@@ -59,10 +59,10 @@ def generate_launch_description():
                     on_exit=Shutdown(),
                     )
     
-    rqt_tf_tree_node = Node(name='rqt_tf_tree',
-                    package='rqt_tf_tree',
-                    executable='rqt_tf_tree'
-                    )
+    # rqt_tf_tree_node = Node(name='rqt_tf_tree',
+    #                 package='rqt_tf_tree',
+    #                 executable='rqt_tf_tree'
+    #                 )
     
     puzzledrone_node = Node(name="puzzledrone",
                             package='ui_implementation',
@@ -93,6 +93,14 @@ def generate_launch_description():
                                     )
                                 )
 
-    l_d = LaunchDescription([static_transform_node, static_transform_node_2, robot_state_pub_node, rviz_node, rqt_tf_tree_node, puzzledrone_node, shutdown_log, *shutdown_on_exit])
+    l_d = LaunchDescription([
+        static_transform_node,
+        static_transform_node_2, 
+        robot_state_pub_node, 
+        rviz_node, 
+        # rqt_tf_tree_node, 
+        puzzledrone_node, 
+        shutdown_log,
+        *shutdown_on_exit])
 
     return l_d
