@@ -29,7 +29,8 @@ setup(
         'console_scripts': [
             'ui_listener = ui_implementation.ui_listener:main',
             'puzzlebot = ui_implementation.puzzlebot:main',
-            'puzzle_drone = ui_implementation.puzzle_drone:main'
+            'puzzle_drone = ui_implementation.puzzle_drone:main',
+            'publisher_dummy = ui_implementation.publisher_dummy:main'
         ],
     },
 )
