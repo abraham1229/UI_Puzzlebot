@@ -86,13 +86,17 @@ export default function PublisherComponent() {
 
   return (
     <div className='flex flex-col'>
-      <label className='text-lg ' htmlFor='numberInput'>Seleccione el modelo deseado</label>
-      <input 
+      <label className='text-lg' htmlFor='modelSelect'>Seleccione el modelo deseado</label>
+      <select
+        id='modelSelect'
         className='bg-white text-black mt-6 max-w-3/4 px-5 py-2 rounded-2xl'
-        type='number'
-        id='numberInput'
         value={number.data}
-        onChange={handleChange}/>
+        onChange={handleChange}
+      >
+        <option value={1} className='rounded-2xl'> Modelo de Puzzlebot </option>
+        <option value={2} className='rounded-2xl'> Modelo de Puzzledrone </option>
+      </select>
     </div>
+    
   )
 }

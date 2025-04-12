@@ -54,8 +54,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_footprint:
-          Value: true
         base_link:
           Value: true
         map:
@@ -81,8 +79,6 @@ Visualization Manager:
         world:
           map:
             odom:
-              base_footprint:
-                {}
               base_link:
                 prop_1:
                   {}
@@ -191,25 +187,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 4.398376941680908
+      Distance: 5.517323970794678
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.5328449010849
-        Y: 2.168959379196167
-        Z: -0.05918293818831444
+        X: 1.5604671239852905
+        Y: 2.240412950515747
+        Z: -0.04523470997810364
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5653982758522034
+      Pitch: 0.5553982853889465
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.698587894439697
+      Yaw: 5.88859224319458
     Saved: ~
 Window Geometry:
   Displays:
