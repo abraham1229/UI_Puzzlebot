@@ -66,7 +66,7 @@ export default function PublisherComponent() {
 
   useEffect(() => {
     numberRef.current = number;
-    setValue(number)
+    setValue(number.data)
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [number]);
