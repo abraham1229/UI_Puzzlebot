@@ -24,6 +24,9 @@ class MinimalSubscriber(Node):
         self.launch_process_number_anterior = 0
         self.launch_process = None
 
+        self.get_logger().info(f"UI listener initialized")
+
+
     def listener_callback(self, msg):
         
         self.launch_process_number = msg.data
@@ -77,27 +80,19 @@ class MinimalSubscriber(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-
     minimal_subscriber = MinimalSubscriber()
 
-    # Manejar Ctrl+C para cerrar procesos antes de salir
-    def signal_handler(sig, frame):
-        print("Interrupción recibida (Ctrl+C), cerrando procesos...")
+    try:
+        rclpy.spin(minimal_subscriber)
+    finally:
+        # Aquí se ejecuta al hacer Ctrl+C o shutdown por ROS
         if minimal_subscriber.launch_process is not None:
             try:
                 os.killpg(os.getpgid(minimal_subscriber.launch_process.pid), signal.SIGTERM)
                 print("Proceso hijo terminado.")
             except Exception as e:
                 print(f"Error al cerrar el proceso hijo: {e}")
-        rclpy.shutdown()
-        sys.exit(0)
 
-    signal.signal(signal.SIGINT, signal_handler)
-
-    try:
-        rclpy.spin(minimal_subscriber)
-    finally:
-        # Asegurar limpieza final
         minimal_subscriber.destroy_node()
         rclpy.shutdown()
 
