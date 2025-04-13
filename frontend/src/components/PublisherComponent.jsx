@@ -96,6 +96,13 @@ export default function PublisherComponent() {
         <option value={1} className='rounded-2xl'> Modelo de Puzzlebot </option>
         <option value={2} className='rounded-2xl'> Modelo de Puzzledrone </option>
       </select>
+
+      <p className='my-10 text-lg'>Representación del modelo</p>
+      <img 
+        src={`/modelviews/${number.data}.png`} 
+        alt={`Modelo ${number.data}`}
+        />
+
     </div>
     
   )

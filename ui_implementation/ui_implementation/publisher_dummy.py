@@ -15,10 +15,10 @@ class MinimalPublisher(Node):
 
     def timer_callback(self):
         msg = Int32()
-        if self.i > 20:
-            msg.data = 2
-        else:
-            msg.data = 1
+        # if self.i > 20:
+        #     msg.data = 2
+        # else:
+        msg.data = 2
         self.publisher_.publish(msg)
         self.get_logger().info('Publishing: "%s"' % msg.data)
         self.i += 1
