@@ -14,13 +14,13 @@ export default function Layout() {
         <p className='text-xl mt-5 flex items-center justify-center gap-3'>
           {conectionStatus ? (
             <>
-              <CheckCircleIcon className='h-6 w-6 text-green-500' />
               Conexión establecida mediante WebSocket
+              <CheckCircleIcon className='h-6 w-6 text-green-500' />
             </>
           ) : (
             <>
+              Estableciendo conexión
               <ArrowPathIcon className='h-6 w-6 text-yellow-400 animate-spin' />
-              Estableciendo conexión...
             </>
           )}
         </p>

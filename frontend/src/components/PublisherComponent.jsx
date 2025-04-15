@@ -103,21 +103,26 @@ export default function PublisherComponent() {
       </select>
 
       <p className='my-10 text-lg mx-2'>Representación del modelo</p>
-      <div className='flex'>
+      <div className='flex items-center'>
         <img
           src={`/modelviews/${number.data}.png`}
           alt={`Modelo ${number.data}`}
-          className='rounded-2xl object-contain w-7/8'
+          className='rounded-2xl object-contain items-center w-7/8'
         />
       </div>
       
       <div className='mt-auto pt-6 flex justify-center'>
       <button 
-        className='bg-white text-black hover:bg-gray-500 hover:text-white active:scale-95 transition-all duration-200 rounded-3xl px-6 py-3 shadow-lg'
+        disabled={!status}
+        className={`bg-white text-black rounded-3xl px-6 py-3 shadow-lg transition-all duration-200 
+          ${!status 
+            ? 'opacity-50 cursor-not-allowed' 
+            : 'hover:bg-gray-500 hover:text-white active:scale-95'}`}
         onClick={handleClickButton}
       >
         Select
       </button>
+
     </div>
 
     </div>
