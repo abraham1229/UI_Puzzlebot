@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as ROSLIB from 'roslib'
 import { useTopicValue } from '../hooks/topic'
-
+import { useTopicStatus } from '../hooks/connection'
 
 export default function PublisherComponent() {
 
   //Valores de zustand
   const { setValue } = useTopicValue()
+  const { setTopicState} = useTopicStatus()
 
   //Vars ros conextion
   const [status, setStatus] = useState(false)
@@ -29,12 +30,14 @@ export default function PublisherComponent() {
     ros.on('error', function (error) {
       console.log(error)
       setStatus(false)
+      setTopicState(false)
     })
 
     // Find out exactly when we made a connection.
     ros.on('connection', function () {
       console.log('Connected!')
       setStatus(true)
+      setTopicState(true)
     })
 
     ros.on('close', function () {
