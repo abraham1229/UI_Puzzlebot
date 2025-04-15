@@ -67,10 +67,13 @@ export default function PublisherComponent() {
     }))
   }
 
-  useEffect(() => {
-    numberRef.current = number;
-    setValue(number.data)
+  const handleClickButton = () => {
 
+    numberRef.current = number;
+  }
+
+  useEffect(() => {
+    setValue(number.data)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [number]);
 
@@ -100,15 +103,20 @@ export default function PublisherComponent() {
         <option value={2} className='rounded-2xl'> Modelo de Puzzledrone </option>
       </select>
 
-      <p className='my-10 text-lg'>Representación del modelo</p>
-      <div className='flex flex-1 text-center justify-center'>
+      <p className='my-10 text-lg mx-2'>Representación del modelo</p>
+      <div className='flex'>
         <img
           src={`/modelviews/${number.data}.png`}
           alt={`Modelo ${number.data}`}
-          className='rounded-2xl object-contain'
+          className='rounded-2xl object-contain w-7/8'
         />
       </div>
-
+      <button 
+        className='mt-10'
+        onClick={handleClickButton}
+        >
+        Select
+      </button>
     </div>
 
   )
