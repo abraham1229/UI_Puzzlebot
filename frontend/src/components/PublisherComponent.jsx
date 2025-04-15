@@ -35,15 +35,14 @@ export default function PublisherComponent() {
 
     // Find out exactly when we made a connection.
     ros.on('connection', function () {
-      console.log('Connected!')
       setStatus(true)
       setTopicState(true)
     })
 
     ros.on('close', function () {
-      console.log('Connection closed')
       ros.close()
       setStatus(false)
+      setTopicState(false)
     })
   }
 
@@ -91,11 +90,11 @@ export default function PublisherComponent() {
   }, [])
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col h-7/8'>
       <label className='text-lg' htmlFor='modelSelect'>Seleccione el modelo deseado</label>
       <select
         id='modelSelect'
-        className='bg-white text-black mt-6 max-w-3/4 px-5 py-2 rounded-2xl'
+        className='bg-white text-black mt-6 max-w-3/4 px-5 py-2 rounded-2xl shadow-2xl'
         value={number.data}
         onChange={handleChange}
       >
@@ -111,13 +110,16 @@ export default function PublisherComponent() {
           className='rounded-2xl object-contain w-7/8'
         />
       </div>
+      
+      <div className='mt-auto pt-6 flex justify-center'>
       <button 
-        className='mt-10'
+        className='bg-white text-black hover:bg-gray-500 hover:text-white active:scale-95 transition-all duration-200 rounded-3xl px-6 py-3 shadow-lg'
         onClick={handleClickButton}
-        >
+      >
         Select
       </button>
     </div>
 
+    </div>
   )
 }
