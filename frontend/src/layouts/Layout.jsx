@@ -4,14 +4,14 @@ import { Outlet } from 'react-router-dom'
 export default function Layout() {
   return (
     <div className='bg-slate-950 min-h-screen text-white pt-15'>
-      <div className='flex justify-evenly items-baseline'>
+      <div className='flex flex-col text-center lg:flex-row lg:justify-evenly lg:items-baseline'>
         <h1 className='text-3xl'> URDF Visualizer for Rviz2</h1>
-        <p className='text-xl'> Conexion establecida </p>
+        <p className='text-xl mt-5'> Conexion establecida mediante web socket </p>
       </div>
       <div className='m-16'>
         <Outlet />
       </div>
-      
+
     </div>
   )
 }
