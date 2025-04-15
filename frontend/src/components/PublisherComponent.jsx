@@ -7,7 +7,7 @@ export default function PublisherComponent() {
 
   //Valores de zustand
   const { setValue } = useTopicValue()
-  const { setTopicState} = useTopicStatus()
+  const { setTopicState } = useTopicStatus()
 
   //Vars ros conextion
   const [status, setStatus] = useState(false)
@@ -20,7 +20,7 @@ export default function PublisherComponent() {
 
 
   //Valores a publicar
-  const [number, setNumber] = useState({ data: 1 })
+  const [number, setNumber] = useState({ data: 0 })
   const numberRef = useRef(number);
 
   //Ros functions
@@ -91,39 +91,44 @@ export default function PublisherComponent() {
 
   return (
     <div className='flex flex-col h-7/8'>
-      <label className='text-lg' htmlFor='modelSelect'>Seleccione el modelo deseado</label>
+      <label className='text-lg mx-2' htmlFor='modelSelect'>Seleccione el modelo deseado</label>
       <select
         id='modelSelect'
         className='bg-white text-black mt-6 max-w-3/4 px-5 py-2 rounded-2xl shadow-2xl'
         value={number.data}
         onChange={handleChange}
       >
+        <option value={0} className='rounded-2xl'> Seleccione un modelo </option>
         <option value={1} className='rounded-2xl'> Modelo de Puzzlebot </option>
         <option value={2} className='rounded-2xl'> Modelo de Puzzledrone </option>
       </select>
 
       <p className='my-10 text-lg mx-2'>Representación del modelo</p>
       <div className='flex items-center'>
-        <img
-          src={`/modelviews/${number.data}.png`}
-          alt={`Modelo ${number.data}`}
-          className='rounded-2xl object-contain items-center w-7/8'
-        />
+        {number.data === 0 ? (
+          <p className='text-lg text-gray-500 mx-2'>Seleccione un modelo para visualizar</p>
+        ) : (
+          <img
+            src={`/modelviews/${number.data}.png`}
+            alt={`Modelo ${number.data}`}
+            className='rounded-2xl object-contain items-center w-7/8'
+          />
+        )}
       </div>
-      
-      <div className='mt-auto pt-6 flex justify-center'>
-      <button 
-        disabled={!status}
-        className={`bg-white text-black rounded-3xl px-6 py-3 shadow-lg transition-all duration-200 
-          ${!status 
-            ? 'opacity-50 cursor-not-allowed' 
-            : 'hover:bg-gray-500 hover:text-white active:scale-95'}`}
-        onClick={handleClickButton}
-      >
-        Select
-      </button>
 
-    </div>
+      <div className='mt-auto pt-6 flex justify-center'>
+        <button
+          disabled={!status}
+          className={`bg-white text-black rounded-3xl px-6 py-3 shadow-lg transition-all duration-200 
+          ${!status
+              ? 'opacity-50 cursor-not-allowed'
+              : 'hover:bg-gray-500 hover:text-white active:scale-95'}`}
+          onClick={handleClickButton}
+        >
+          Select
+        </button>
+
+      </div>
 
     </div>
   )
