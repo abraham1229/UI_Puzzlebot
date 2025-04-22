@@ -15,9 +15,12 @@ Este proyecto permite seleccionar y visualizar modelos URDF en ROS 2 mediante un
 
 1. Dirígete a la carpeta `frontend`
 2. Ejecuta los siguientes comandos:
-
-**npm install**  
-**npm run dev**
+```
+npm install
+```
+```
+npm run dev
+```
 
 Esto levantará la UI en modo desarrollo. La interfaz te permitirá seleccionar el modelo a visualizar, y enviará el valor a un tópico `std_msgs/Int32` usando ROSLIB.
 
@@ -30,9 +33,15 @@ Esto levantará la UI en modo desarrollo. La interfaz te permitirá seleccionar 
 1. Coloca el paquete `ui_implementation` en el workspace de ROS 2 (`ros2_ws/src`)
 2. Ejecuta los siguientes comandos:
 
-**colcon build --packages-select ui_implementation**  
-**source install/setup.bash**  
-**ros2 run ui_implementation ui_listener**
+```
+colcon build --packages-select ui_implementation
+```
+```
+source install/setup.bash
+```  
+```
+ros2 run ui_implementation ui_listener
+```
 
 El nodo `ui_listener` escuchará el tópico y activará el modelo URDF correspondiente en RViz2.
 
@@ -49,7 +58,7 @@ El nodo `ui_listener` escuchará el tópico y activará el modelo URDF correspon
 
 ## 👨‍💻 Autor
 
-Abraham Ortiz – Proyecto de integración ROS 2 + Web UI
+Abraham Ortiz
 
 ---
 
