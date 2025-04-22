@@ -50,15 +50,15 @@ El nodo `ui_listener` escuchará el tópico y activará el modelo URDF correspon
 ## ✅ Requisitos
 
 - ROS 2 (Humble u otra versión compatible)
-- ROSBridge WebSocket Server corriendo en **ws://localhost:9090**
-- Node.js 18+
-- Navegador moderno
+- Rviz2 instalado
+- Node.js 16+
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 
-Abraham Ortiz
+- **Abraham Ortiz** - [GitHub](https://github.com/abrahamortiz) 
+- **Alan Flores** - [GitHub](https://github.com/AIF31)
 
 ---
 
