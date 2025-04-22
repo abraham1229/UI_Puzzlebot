@@ -31,7 +31,7 @@ Esto levantará la UI en modo desarrollo. La interfaz te permitirá seleccionar 
 ### 🔧 Instrucciones
 
 1. Coloca el paquete `ui_implementation` en el workspace de ROS 2 (`ros2_ws/src`)
-2. Ejecuta los siguientes comandos:
+2. Ejecuta los siguientes comandos en tu directorio de ros (ros2_ws comúnmente):
 
 ```
 colcon build --packages-select ui_implementation
