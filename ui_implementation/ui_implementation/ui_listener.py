@@ -53,7 +53,9 @@ class MinimalSubscriber(Node):
 
     def run_web_socket(self):
         try:
-            launch_command = "bash -c 'source /home/abraham1229/ros2_ws/install/setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml'"
+            home_dir = os.path.expanduser("~")
+            launch_command = f"bash -c 'source {home_dir}/ros2_ws/install/setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml'"
+            #launch_command = "bash -c 'source /home/ai31/ros2_ws/install/setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml'"
             self.get_logger().info(f"Ejecutando WebSocket: {launch_command}")
             self.ws_process = subprocess.Popen(
                 launch_command,
@@ -86,7 +88,9 @@ class MinimalSubscriber(Node):
 
     def run_launch(self, launch_name):
         try:
-            launch_command = f"bash -c 'cd /home/abraham1229/ros2_ws && source install/setup.bash && ros2 launch ui_implementation {launch_name}_launch.py'"
+            home_dir = os.path.expanduser("~")
+            launch_command = f"bash -c 'cd {home_dir}/ros2_ws && source install/setup.bash && ros2 launch ui_implementation {launch_name}_launch.py'"
+            #launch_command = f"bash -c 'cd /home/ai31/ros2_ws && source install/setup.bash && ros2 launch ui_implementation {launch_name}_launch.py'"
             self.get_logger().info(f"Ejecutando: {launch_command}")
             self.launch_process = subprocess.Popen(
                 launch_command,
