@@ -9,6 +9,25 @@ Este proyecto permite seleccionar y visualizar modelos URDF en ROS 2 mediante un
 
 ---
 
+## 📦 Paquetes necesitados
+
+Para instalar corre el siguiente código en terminal:
+### RosBridge
+```
+# ROS packages
+sudo apt install ros-humble-rosbridge-suite
+```
+### psutil
+```
+# Python package
+pip install psutil
+```
+### Roslib
+1. Dirígete a la carpeta `frontend`
+2. Ejecuta los siguientes comandos:
+```
+npm install roslib zustand
+```
 ## 🚀 Frontend (React + ROSLIB)
 
 ### 📦 Instalación
