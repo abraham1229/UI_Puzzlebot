@@ -22,12 +22,7 @@ sudo apt install ros-humble-rosbridge-suite
 # Python package
 pip install psutil
 ```
-### Roslib
-1. Dirígete a la carpeta `frontend`
-2. Ejecuta los siguientes comandos:
-```
-npm install roslib zustand
-```
+
 ## 🚀 Frontend (React + ROSLIB)
 
 ### 📦 Instalación
